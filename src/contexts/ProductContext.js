@@ -14,12 +14,12 @@ export function ProductContextProvider({ children }) {
     setCart([...cart, newItem]);
   };
   useEffect(() => {
-    console.log("SEPETE EKLEDİM Mİ?", cart);
+    console.log("ADD ITEM", cart);
   }, [cart]);
 
   const removeItem = (id) => {
     setCart(cart.filter((item) => item.id !== id));
-    console.log("SİLİYOR MUYUM", cart);
+    console.log("DELETE ITEM", cart);
   };
 
   return (
