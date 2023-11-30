@@ -7,6 +7,9 @@ import Navigation from "./components/Navigation";
 import Products from "./components/Products";
 import ShoppingCart from "./components/ShoppingCart";
 
+//contexts
+import { ProductContextProvider } from "./contexts/ProductContext";
+
 function App() {
   const [products, setProducts] = useState(data);
   const [cart, setCart] = useState([]);
@@ -16,6 +19,7 @@ function App() {
   };
 
   return (
+    <ProductContextProvider>
     <div className="App">
       <Navigation cart={cart} />
 
@@ -30,6 +34,7 @@ function App() {
         </Route>
       </main>
     </div>
+    </ProductContextProvider>
   );
 }
 
