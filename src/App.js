@@ -22,14 +22,14 @@ function App() {
   }, [cart]);
 
   return (
-    <ProductContextProvider>
+    <ProductContextProvider value={{ products, addItem }}>
       <div className="App">
         <Navigation cart={cart} />
 
         {/* Routelar */}
         <main className="content">
           <Route exact path="/">
-            <Products products={products} addItem={addItem} />
+            <Products />
           </Route>
 
           <Route path="/cart">
