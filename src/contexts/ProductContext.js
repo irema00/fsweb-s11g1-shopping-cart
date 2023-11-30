@@ -15,8 +15,13 @@ export function ProductContextProvider({ children }) {
     console.log("SEPETE EKLEDİM Mİ?", cart);
   }, [cart]);
 
+  const removeItem = (id) => {
+    setCart(cart.filter((item) => item.id !== id));
+    console.log("SİLİYOR MUYUM", cart);
+  };
+
   return (
-    <ProductContext.Provider value={{ products, addItem }}>
+    <ProductContext.Provider value={{ products, addItem, removeItem }}>
       {children}
     </ProductContext.Provider>
   );
