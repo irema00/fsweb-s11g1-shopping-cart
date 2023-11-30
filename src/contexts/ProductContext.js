@@ -1,9 +1,7 @@
 import { createContext } from "react";
 
-export const ProductContextObject = createContext();
+export const ProductContext = createContext();
 
 export function ProductContextProvider({ children }) {
-  return (
-    <ProductContextObject.Provider>{children}</ProductContextObject.Provider>
-  );
+  return <ProductContext.Provider>{children}</ProductContext.Provider>;
 }
